@@ -11,7 +11,7 @@ if($Posting){
 		$masukin= mysql_query("INSERT INTO commentdata VALUES ('','$commentText')")
 		or die ("Something goes wrong");
 	}else echo "Comment too long";
-	}else echo "please insert comment";
+	}else echo "apa yg mau di insert?";
 };
 
 ?>
