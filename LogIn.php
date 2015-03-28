@@ -9,11 +9,12 @@
 }
  
 h2{
- background-color: #53bd84;
- padding: 30px 35px;
+ 
+ background: linear-gradient(#0066ff 10%, #fff 100%);
+ padding: 30px 50px;
  margin: -10px -50px;
  text-align:center;
- color: #fff;
+ color: #191959;
 }
  
 span{
@@ -22,15 +23,9 @@ span{
  color: red;
 }
  
-.success{
- display: block;
- margin-top: 20px;
- margin-bottom: 0;
- font-size: 14px;
-} 
  
 b{
- color:green;
+ color:#47D147	;
 }
  
 hr{
@@ -56,7 +51,7 @@ input[type=text]{
  margin-bottom: 25px;
  margin-top: 5px;
  border: 2px solid #ccc;
- color: #53bd84;
+ color: #191959;
  font-size: 16px;
 }
 input[type=password]{
@@ -66,12 +61,12 @@ input[type=password]{
  margin-bottom: 25px;
  margin-top: 5px;
  border: 2px solid #ccc;
- color: #53bd84;
+ color: #191959;
  font-size: 16px;
 }
 
   label{
- color: #53bd84;
+ color: #191959;
  text-shadow: 0 1px 0 #fff;
  font-size: 14px;
  font-weight: bold;
@@ -79,7 +74,7 @@ input[type=password]{
  
 input[type=submit]{
  font-size: 16px;
- background: linear-gradient(#53bd84 5%, #fff 100%);
+ background: linear-gradient(#fff 0%, #0066ff 80%);
  color: #4E4D4B;
  font-weight: bold;
  cursor: pointer;
@@ -94,16 +89,19 @@ input[type=submit]{
 
 <div class="container">
 		<div class="main">
-		<form name="logform" method="post" action="dbcon.php">
-		<h2>Selamat Datang di Halaman Masuk Explore Surabaya</h2>
-		<h2>Silahkan Masukkan Username dan Password</h2><br>
-<label>Username:</label><br>
- <input type="text"	name="UserName" id="UserName">
+	<form name="logform" method="post" action="logpros.php">
+		<h2>Selamat Datang di Halaman Masuk Explore Surabaya<br>
+		<br>Silahkan Masukkan Username dan Password</h2><br>
+		<label>Username:</label><br>
+			<input type="text"	name="UserName" id="UserName">
 <br>
-<label>Password:</label><br>
-<input type="password" name="PassWord" id="PassWord">
+		<label>Password:</label><br>
+			<input type="password" name="PassWord" id="PassWord">
 <br>
-<input name="Login" type="submit" value="Login">
+			<input name="Login" type="submit" value="Login">
+	</form>
+	<form name="regbutton" method="post" action="reg.php">
+			<input name="Register" type="submit" value="Register" action="reg.php">
 </form>
 </body>
 </html>
