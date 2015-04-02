@@ -1,6 +1,5 @@
 <html>
-<head>
-<style>
+<head><style>
 	
 
 ul {
@@ -41,7 +40,9 @@ if($NewsPost){
 	if($NewsText==true){ 
 		
 	if(strlen($NewsText)<701){
-		$updatenews= mysql_query("INSERT INTO news VALUES ('','$NewsText','$status','$NewsTitle')")
+		$Editnews= mysql_query("UPDATE news 
+									  SET NewsDesc=('$NewsText'),Status=('$status')
+									  WHERE Title=('$NewsTitle')")
 		or die ("Something goes wrong");
 	}else echo "post too long";
 	}else echo "please insert any text";
@@ -49,6 +50,7 @@ if($NewsPost){
 
 ?>
 </head>
+<body>
 <body>
 <ul>
   <li><a class="head" href="profileadmin.php">
@@ -64,7 +66,13 @@ echo $_SESSION['Username'];
 <li><a class="head" href="EventEditor.php">Edit Event</a></li>
   <li><a class="head" href="headlogin.php">Home</a></li>
   <li><a class="head" href="headlogin.php"><img src="headlogo.png" width="308px" height="25px"></a></li>
+ 
+  
 
+
+
+ 
+</body>
 <form method="post">
 PostTitle:<br> <textarea name='PostTitle' id='PostTitle'></textarea><br />
 Update Post:<br> <textarea name='NewsText' id='NewsText'></textarea><br />

@@ -80,7 +80,7 @@ echo $_SESSION['Username'];
 ?>
 </a></li>
   <li><a class="head" href="logout.php">Logout</a></li>
-  <li><a class="head" href="Contact.php">Contact</a></li>
+  <li><a class="head" href="C	ontact.php">Contact</a></li>
   <li><a class="head" href="Allnews.php">Tempat Wisata</a></li>
   <li><a class="head" href="headlogin.php">Home</a></li>
   <li><a class="head" href="headlogin.php"><img src="headlogo.png" width="308px" height="25px"></a></li>
@@ -93,46 +93,16 @@ echo $_SESSION['Username'];
 <table width="100%">
 	<tr>
 	<td width="70%" valign="top"> 
-	<div class="sidabar_title">Most Viewed	</div>
-<?php
-include('dbcon.php');
-$tampil=mysql_query("SELECT * FROM news WHERE status='Most View'");
-while($row= mysql_fetch_array($tampil)){
-	?>
-	<p class="test1"><a class="one" href="default.asp" target="_blank"><?php echo $row['Title'];?></a><br>
-<?php echo $row['NewsDesc'];?>
-</p>
+	<div class="sidabar_title">Contact Person	</div>
+	<p class="test1">
+Call Admin: 08xx-xxxxxx</p>
+	<p class="test1">Call Mrket: 08xx-xxxxxx</p>
+
 	<?php
-}
+
 ?>
-</td>
-<td width="20%">
-</td>
 
-	<td width="8%"> 
-	<form>
-	<br><label>Search</label> <input type="text"	name="UserName" id="UserName">
-	</form>
 
-<div class="sidabar_title">Lastest Event</div>
-<div class="sidebar_content">
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-</div>
 
 </td>	
 </table>

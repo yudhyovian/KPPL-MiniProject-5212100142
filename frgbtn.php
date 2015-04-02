@@ -1,7 +1,34 @@
 <html>
 <head>
- <title>Halaman Login|Explore Surabaya</title>
-    
+<?php
+include('dbcon.php');
+$Username = @$_POST['Username'];
+$password = @$_POST['password'];
+$reenterpassword = @$_POST['reenterpassword'];
+$submit =@$_POST['submit'];
+$encryptPassword = md5($password);
+if($submit){
+	if($Username==true){
+	if($password==true){
+	if($reenterpassword==$password){
+		if(strlen($Username)<31||strlen($FirstName)<31||strlen($LastName)<31){
+			if(strlen($password)>12||strlen($password)<50){
+				$update= mysql_query("UPDATE userdata 
+									  SET password=('$password'),reenterpassword=('$encryptPassword')
+									  WHERE Username=('$Username')")
+				or die ("Something goes wrong");
+			}else echo "Your Password shouldn't be exceed 50 character or at least 12 character";
+		}else echo "maximum character of Name and Username is 50 Character";
+	}else
+		echo "Your Password is not the same";
+	}else
+		echo "Please Input Your";
+	}else
+		echo "Please Input Username";
+	
+};
+
+?>
 <style>
 .container {
 	width: 50%;
@@ -86,26 +113,19 @@ a:hover, a:active {
     background-color: #7A991A;
 }
 </style>
-</head>	
+</head>
 <body>
-
-
 <div class="container">
 		<div class="main">
-	<form name="logform" method="post" action="logpros.php">
+	<form method="post">
 		<h2>Selamat Datang di Halaman Masuk Explore Surabaya</h2>
 		<h2>Silahkan Masukkan Username dan Password</h2>
-		<br><label>Username:</label><br>
-			<input type="text"	name="UserName" id="UserName">
+<form method="post">
 <br>
-		<label>Password:</label><br>
-			<input type="password" name="PassWord" id="PassWord">
-<br>
-			<input name="Login" type="submit" value="Login">
-	</form>
-		
-<form name="frgbutton" method="post" action="frgbtn.php">
-			<input name="Forgot Password" type="submit" value="Forgot Password" action="frgbtn.php">
+<label>Username: </label><br><input name="Username" type="text"><br>
+<label>Password: </label><br><input name="password" type="password"><br>
+<label>Re-EnterPassword: </label><br><input name="reenterpassword" type="password"><br>
+<br><input name="submit" type="submit"><br>
 </form>
 </body>
 </html>

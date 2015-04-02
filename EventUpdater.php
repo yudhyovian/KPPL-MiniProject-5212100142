@@ -33,15 +33,15 @@ a.head:hover, a.head:active {
 }</style>
 <?php
 include('dbcon.php');
-$NewsText = @$_POST['NewsText'];
+$EventText = @$_POST['EventText'];
 $status = @$_POST['Status'];
-$NewsTitle = @$_POST['PostTitle'];
-$NewsPost = @$_POST['NewsPost'];
-if($NewsPost){
-	if($NewsText==true){ 
+$EventTitle = @$_POST['EventTitle'];
+$EventPost = @$_POST['EventPost'];
+if($EventPost){
+	if($EventText==true){ 
 		
-	if(strlen($NewsText)<701){
-		$updatenews= mysql_query("INSERT INTO news VALUES ('','$NewsText','$status','$NewsTitle')")
+	if(strlen($EventText)<300){
+		$updateEvent= mysql_query("INSERT INTO events VALUES ('','$EventText','$status','$EventTitle')")
 		or die ("Something goes wrong");
 	}else echo "post too long";
 	}else echo "please insert any text";
@@ -66,10 +66,9 @@ echo $_SESSION['Username'];
   <li><a class="head" href="headlogin.php"><img src="headlogo.png" width="308px" height="25px"></a></li>
 
 <form method="post">
-PostTitle:<br> <textarea name='PostTitle' id='PostTitle'></textarea><br />
-Update Post:<br> <textarea name='NewsText' id='NewsText'></textarea><br />
+EventTitle:<br> <textarea name='EventTitle' id='EventTitle'></textarea><br />
+Update Event:<br> <textarea name='EventText' id='EventText'></textarea><br />
 Status:<br> <textarea name='Status' id='Status'></textarea><br />
-Post: <input name="NewsPost" type="submit"><br>
-</form>
+Submit: <input name="EventPost" type="submit"><br></form>
 </body>
 </html>

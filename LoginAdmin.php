@@ -92,7 +92,7 @@ a:hover, a:active {
 
 <div class="container">
 		<div class="main">
-	<form name="logform" method="post" action="logpros.php">
+	<form name="logform" method="post" action="logprosadmin.php">
 		<h2>Selamat Datang di Halaman Masuk Explore Surabaya</h2>
 		<h2>Silahkan Masukkan Username dan Password</h2>
 		<br><label>Username:</label><br>
@@ -104,8 +104,6 @@ a:hover, a:active {
 			<input name="Login" type="submit" value="Login">
 	</form>
 		
-<form name="frgbutton" method="post" action="frgbtn.php">
-			<input name="Forgot Password" type="submit" value="Forgot Password" action="frgbtn.php">
-</form>
+
 </body>
 </html>

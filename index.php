@@ -73,17 +73,12 @@ a.one:hover {color:#ffcc00;}
 </head>
 <body>
 <ul>
-  <li><a class="head" href="profile.php">
-<?php
-session_start();
-echo $_SESSION['Username'];
-?>
-</a></li>
-  <li><a class="head" href="logout.php">Logout</a></li>
-  <li><a class="head" href="Contact.php">Contact</a></li>
-  <li><a class="head" href="Allnews.php">Tempat Wisata</a></li>
-  <li><a class="head" href="headlogin.php">Home</a></li>
-  <li><a class="head" href="headlogin.php"><img src="headlogo.png" width="308px" height="25px"></a></li>
+  <li><a class="head" href="reg.php">Daftar</a></li>
+  <li><a class="head" href="LogIn.php">Log In</a></li>
+  <li><a class="head" href="LogIn.php">Contact</a></li>
+  <li><a class="head" href="LogIn.php">Tempat Wisata</a></li>
+  <li><a class="head" href="index.php">Home</a></li>
+  <li><a class="head" href="index.php"><img src="headlogo.png" width="308px" height="25px"></a></li>
  
   
 
@@ -99,7 +94,7 @@ include('dbcon.php');
 $tampil=mysql_query("SELECT * FROM news WHERE status='Most View'");
 while($row= mysql_fetch_array($tampil)){
 	?>
-	<p class="test1"><a class="one" href="default.asp" target="_blank"><?php echo $row['Title'];?></a><br>
+	<p class="test1"><a class="one" href="LogIn.php" target="_blank"><?php echo $row['Title'];?></a><br>
 <?php echo $row['NewsDesc'];?>
 </p>
 	<?php

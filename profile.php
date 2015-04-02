@@ -7,9 +7,9 @@ $LastName = @$_POST['LastName'];
 $Username = @$_POST['Username'];
 $password = @$_POST['password'];
 $reenterpassword = @$_POST['reenterpassword'];
-$SignUp =@$_POST['register'];
+$submit =@$_POST['submit'];
 $encryptPassword = md5($password);
-if($SignUp){
+if($submit){
 	if($FirstName==true){
 	if($LastName==true){
 	if($Username==true){
@@ -17,7 +17,9 @@ if($SignUp){
 	if($reenterpassword==$password){
 		if(strlen($Username)<31||strlen($FirstName)<31||strlen($LastName)<31){
 			if(strlen($password)>12||strlen($password)<50){
-				$daftar= mysql_query("INSERT INTO userdata VALUES ('','$FirstName','$LastName','$Username','$password','$encryptPassword')")
+				$update= mysql_query("UPDATE userdata 
+									  SET FirstName=('$FirstName'),LastName=('$LastName'),password=('$password'),reenterpassword=('$encryptPassword')
+									  WHERE Username=('$Username')")
 				or die ("Something goes wrong");
 			}else echo "Your Password shouldn't be exceed 50 character or at least 12 character";
 		}else echo "maximum character of Name and Username is 50 Character";
@@ -31,7 +33,9 @@ if($SignUp){
 		echo "Please Input Your Name";
 	}else
 		echo "Please Input Your Name"; 
-};
+	
+
+	};
 
 ?>
 <style>
@@ -123,8 +127,8 @@ a:hover, a:active {
 <div class="container">
 		<div class="main">
 	<form method="post">
-		<h2>Selamat Datang di Halaman Masuk Explore Surabaya</h2>
-		<h2>Silahkan Masukkan Username dan Password</h2>
+		<h2>Ini Biodata Anda</h2>
+		<h2>Silahkan Merubah Info Diri anda</h2>
 <form method="post">
 <br>
 <label>FirstName: </label><br><input name="FirstName" type="text"><br>
@@ -132,7 +136,11 @@ a:hover, a:active {
 <label>Username: </label><br><input name="Username" type="text"><br>
 <label>Password: </label><br><input name="password" type="password"><br>
 <label>Re-EnterPassword: </label><br><input name="reenterpassword" type="password"><br>
-<label>SignUp: </label><br><input name="register" type="submit"><br>
+<br><input name="submit" type="submit"><br>
 </form>
+<form name="cclbutton" method="post" action="headlogin.php">
+			<input name="Back" type="submit" value="Back" action="headlogin.php">
+</form>
+
 </body>
 </html>

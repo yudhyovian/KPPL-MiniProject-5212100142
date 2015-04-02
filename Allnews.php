@@ -96,10 +96,10 @@ echo $_SESSION['Username'];
 	<div class="sidabar_title">Most Viewed	</div>
 <?php
 include('dbcon.php');
-$tampil=mysql_query("SELECT * FROM news WHERE status='Most View'");
+$tampil=mysql_query("SELECT * FROM news");
 while($row= mysql_fetch_array($tampil)){
 	?>
-	<p class="test1"><a class="one" href="default.asp" target="_blank"><?php echo $row['Title'];?></a><br>
+	<p class="test1"><a class="one" href="Allnews.php" target="_blank"><?php echo $row['Title'];?></a><br>
 <?php echo $row['NewsDesc'];?>
 </p>
 	<?php
@@ -109,30 +109,11 @@ while($row= mysql_fetch_array($tampil)){
 <td width="20%">
 </td>
 
-	<td width="8%"> 
+	<td width="8%" valign="top"> 
 	<form>
 	<br><label>Search</label> <input type="text"	name="UserName" id="UserName">
 	</form>
 
-<div class="sidabar_title">Lastest Event</div>
-<div class="sidebar_content">
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-	<p> Coba </p>
-</div>
 
 </td>	
 </table>
