@@ -22,7 +22,7 @@ if($SignUp){
 			}else echo "Your Password shouldn't be exceed 50 character or at least 12 character";
 		}else echo "maximum character of Name and Username is 50 Character";
 	}else
-		echo "Your Password is not the same";
+		echo "Your Password is different";
 	}else
 		echo "Please Input Your";
 	}else
